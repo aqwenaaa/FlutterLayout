@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // SOAL 1: Column dibungkus Expanded + crossAxisAlignment.start
+    // === Title Section (sudah beres Soal 1–3) ===
     final Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
@@ -16,8 +16,6 @@ class MyApp extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                // SOAL 2: Tambahkan Container padding bottom=8 dan warna abu-abi
-                // Baris judul pertama diberi padding bawah 8
                 Padding(
                   padding: EdgeInsets.only(bottom: 8),
                   child: Text(
@@ -25,7 +23,6 @@ class MyApp extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                // Baris kedua berwarna abu-abu
                 Text(
                   'Batu, Malang, Indonesia',
                   style: TextStyle(color: Colors.grey),
@@ -33,11 +30,21 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-        // Tambahan Soal 3
-        Icon(Icons.star, color: Colors.red),
-        SizedBox(width: 4),
-        Text('41'),        ], 
+          Icon(Icons.star, color: Colors.red),
+          SizedBox(width: 4),
+          Text('41'),
+        ],
       ),
+    );
+    Color color = Theme.of(context).primaryColor;
+
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
     );
 
     return MaterialApp(
@@ -47,9 +54,28 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             titleSection,
+            buttonSection, // Menambahkan buttonSection di bawah titleSection
           ],
         ),
       ),
+    );
+  }
+
+  // Helper untuk membuat satu kolom tombol (ikon + label)
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: color),
+          ),
+        ),
+      ],
     );
   }
 }
