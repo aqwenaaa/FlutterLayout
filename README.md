@@ -60,9 +60,9 @@ flutter run
 
 Letakkan file screenshot di folder `docs/` lalu tampilkan:
 
-```
+
 ![Praktikum 1 — Title Row](images/1.png)
-```
+
 
 
 </details>
@@ -110,9 +110,7 @@ final titleSection = Container(
 <details>
 <summary><b>📷 Screenshot Hasil Akhir</b></summary>
 
-```
 ![Praktikum 2 — Button Row](images/2.png)
-```
 
 </details>
 
@@ -157,9 +155,7 @@ final buttonSection = Row(
 <details>
 <summary><b>📷 Screenshot Hasil Akhir</b></summary>
 
-```
 ![Praktikum 3 — Text Section](images/3.png)
-```
 
 </details>
 
@@ -188,9 +184,8 @@ final textSection = Container(
 <details>
 <summary><b>📷 Screenshot Hasil Akhir</b></summary>
 
-```
 ![Praktikum 4 — Image Section & ListView](images/4.png)
-```
+
 
 </details>
 
@@ -212,29 +207,6 @@ body: ListView(
   ],
 ),
 ```
-
----
-
-## ✅ Checklist Pengumpulan
-
-* [ ] Commit seluruh perubahan (`lib/main.dart`, `pubspec.yaml`, `images/lake.jpg`)
-* [ ] Tambahkan folder `docs/` berisi **screenshot tiap praktikum**:
-
-  * `docs/p1-title-row.png`
-  * `docs/p2-button-row.png`
-  * `docs/p3-text-section.png`
-  * `docs/p4-image-section.png`
-  * `docs/p4-listview-full.png`
-* [ ] Perbarui README (file ini)
-* [ ] Push ke GitHub
-
-```bash
-git add .
-git commit -m "Docs: Praktikum 1–4 (Layout & Navigasi) + README"
-git push origin main
-```
-
-> Terakhir, kirim link repo/commit ke dosen.
 
 ---
 
