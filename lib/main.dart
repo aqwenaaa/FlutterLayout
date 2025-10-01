@@ -47,14 +47,31 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+    'Carilah teks di internet yang sesuai dengan foto atau tempat wisata yang ingin Anda tampilkan. '
+    'Tambahkan identitas berikut pada laporan:'
+    '\nAqueena Regita Hapsari — 2341760096\n\nSelamat mengerjakan 🙂!',
+        softWrap: true,
+        ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Aqueena Regita Hapsari - 2341760096',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter Layout Aqueena')),
-        body: Column(
+        body: ListView(
           children: [
+            Image.asset(
+              'images/lake.jpeg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
             titleSection,
-            buttonSection, // Menambahkan buttonSection di bawah titleSection
+            buttonSection, // Menambahkan buttonSection
+            textSection, // Menambahkan t
           ],
         ),
       ),
